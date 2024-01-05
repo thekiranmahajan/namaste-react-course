@@ -4,7 +4,8 @@
   "description": "This is a walkyhrough of parcel bundler and its importance for react.js",
   "main": "index.js",
   "scripts": {
-    "test": "parcel index.html"
+"build": "parcel index.html build",
+    "start": "parcel index.html"
   },
   "keywords": [
     "Namaste",
@@ -19,5 +20,9 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserlist":[
+    "last 10 versions"
+  ]
+
 }
