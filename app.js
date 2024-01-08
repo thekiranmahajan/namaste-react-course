@@ -1,22 +1,22 @@
-import { createElement } from "react";
+import { createElement as ray } from "react";
 import ReactDOM from "react-dom/client";
 
-const container = createElement("div", { className: "container" }, [
-  createElement(
+const container = ray("div", { className: "container" }, [
+  ray(
     "h1",
     {
       className: "title",
     },
     "heading1"
   ),
-  createElement(
+  ray(
     "h2",
     {
       className: "title",
     },
     "heading2"
   ),
-  createElement(
+  ray(
     "h3",
     {
       className: "title",
