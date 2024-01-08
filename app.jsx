@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const headings = (
+const Headings = () => (
   <>
     <h1 className="title">Heading1</h1>
     <h2 className="title">Heading2</h2>
@@ -10,7 +10,7 @@ const headings = (
 );
 
 const ContainerComponent = () => {
-  return <div className="container">{headings}</div>;
+  return <div className="container">{<Headings></Headings>}</div>;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
