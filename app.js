@@ -1,22 +1,22 @@
-import React from "react";
+import { createElement } from "react";
 import ReactDOM from "react-dom/client";
 
-const container = React.createElement("div", { className: "container" }, [
-  React.createElement(
+const container = createElement("div", { className: "container" }, [
+  createElement(
     "h1",
     {
       className: "title",
     },
     "heading1"
   ),
-  React.createElement(
+  createElement(
     "h2",
     {
       className: "title",
     },
     "heading2"
   ),
-  React.createElement(
+  createElement(
     "h3",
     {
       className: "title",
