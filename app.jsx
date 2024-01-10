@@ -1,17 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { LOGO_IMG } from "./constants";
 
-const Headings = () => (
-  <>
-    <h1 className="title">Heading1</h1>
-    <h2 className="title">Heading2</h2>
-    <h2 className="title">Heading2</h2>
-  </>
-);
-
-const ContainerComponent = () => {
-  return <div className="container">{<Headings></Headings>}</div>;
+const Header = () => {
+  return (
+    <div className="navbar">
+      <div className="right">
+        <img src={LOGO_IMG} />
+      </div>
+      <div className="left">
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact-Us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<ContainerComponent />);
+root.render(<Header />);
