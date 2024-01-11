@@ -31,13 +31,29 @@ body {
   justify-content: space-between;
 }
 .left {
-  width: 60%;
+  width: 350px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .left > ul {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-decoration: none;
   list-style-type: none;
   width: 100%;
   gap: 30px;
+}
+
+.right {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right img {
+  width: 150px;
 }

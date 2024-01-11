@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { LOGO_IMG } from "./constants";
+import logo from "./logo.png";
 
 const Header = () => {
   return (
     <div className="navbar">
       <div className="right">
-        <img src={LOGO_IMG} alt="logo" />
+        <img src={logo} alt="logo" />
       </div>
       <div className="left">
         <ul>
