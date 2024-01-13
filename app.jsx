@@ -32,23 +32,19 @@ const Header = () => {
   );
 };
 
-const RestaurantCard = (props) => {
-  console.log(props);
+const RestaurantCard = ({ restaurant }) => {
   return (
     <div className="card">
       <div className="restaurantImg">
-        <img
-          src={IMG_URL + props.restaurant.cloudinaryImageId}
-          alt="restaurantImg"
-        />
+        <img src={IMG_URL + restaurant.cloudinaryImageId} alt="restaurantImg" />
       </div>
 
-      <h2 className="name">{props.restaurant.name}</h2>
+      <h2 className="name">{restaurant.name}</h2>
       <h4 className="rating-time">
-        ⭐{props.restaurant.avgRating} & {props.restaurant.sla.deliveryTime}mins
+        ⭐{restaurant.avgRating} & {restaurant.sla.deliveryTime}mins
       </h4>
-      <p className="category">{props.restaurant.cuisines}</p>
-      <p className="location">{props.restaurant.locality}</p>
+      <p className="category">{restaurant.cuisines}</p>
+      <p className="location">{restaurant.locality}</p>
     </div>
   );
 };
