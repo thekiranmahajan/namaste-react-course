@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import logo from "./logo.png";
+import { RESTAURANT_DATA, IMG_URL } from "./constants";
 
 const Header = () => {
   const searchText = "hello";
@@ -30,35 +31,32 @@ const Header = () => {
     </div>
   );
 };
-const restaurantAPI = {
-  name: "Naadbramha Idli",
-  img: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/9cdf251bd1a68f107dbe79f7ed95e40a",
-  rating: "4.5",
-  time: 21,
-  category: "South Indian",
-  location: "Swaragate",
-};
 
 const RestaurantCard = () => {
   return (
     <div className="card">
       <div className="restaurantImg">
-        <img src={restaurantAPI.img} alt="restaurantImg" />
+        <img
+          src={IMG_URL + RESTAURANT_DATA[0].info.cloudinaryImageId}
+          alt="restaurantImg"
+        />
       </div>
 
-      <h2 className="name">{restaurantAPI.name}</h2>
+      <h2 className="name">{RESTAURANT_DATA[0].info.name}</h2>
       <h4 className="rating-time">
-        ⭐{restaurantAPI.rating} & {restaurantAPI.time}mins
+        ⭐{RESTAURANT_DATA[0].info.avgRating} &{" "}
+        {RESTAURANT_DATA[0].info.sla.deliveryTime}mins
       </h4>
-      <p className="category">{restaurantAPI.category}</p>
-      <p className="location">{restaurantAPI.location}</p>
+      <p className="category">{RESTAURANT_DATA[0].info.cuisines}</p>
+      <p className="location">{RESTAURANT_DATA[0].info.locality}</p>
     </div>
   );
 };
 const RestaurantList = () => {
+  console.log(RESTAURANT_DATA[0].info.name);
   return (
     <>
-      <RestaurantCard />
+      <RestaurantCard restaurant={RESTAURANT_DATA[0]} />;
     </>
   );
 };
