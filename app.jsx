@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { Header, Body, Footer } from "./src/components";
 const AppLayout = () => {
+  
   return (
     <>
       <Header />
