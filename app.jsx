@@ -32,26 +32,42 @@ const Header = () => {
   );
 };
 
-const RestaurantCard = ({ restaurant }) => {
+const RestaurantCard = ({
+  name,
+  cloudinaryImageId,
+  cuisines,
+  locality,
+  avgRating,
+  sla,
+}) => {
+  console.log(cloudinaryImageId);
   return (
     <div className="card">
       <div className="restaurantImg">
-        <img src={IMG_URL + restaurant.cloudinaryImageId} alt="restaurantImg" />
+        <img src={IMG_URL + cloudinaryImageId} alt="restaurantImg" />
       </div>
 
-      <h2 className="name">{restaurant.name}</h2>
+      <h2 className="name">{name}</h2>
       <h4 className="rating-time">
-        ⭐{restaurant.avgRating} & {restaurant.sla.deliveryTime}mins
+        ⭐{avgRating} & {sla.deliveryTime} mins
       </h4>
-      <p className="category">{restaurant.cuisines}</p>
-      <p className="location">{restaurant.locality}</p>
+      <p className="category">{cuisines}</p>
+      <p className="location">{locality}</p>
     </div>
   );
 };
 const RestaurantList = () => {
   return (
     <>
-      <RestaurantCard restaurant={RESTAURANT_DATA[0].info} />;
+      <RestaurantCard
+        name={RESTAURANT_DATA[0].info.name}
+        cloudinaryImageId={RESTAURANT_DATA[0].info.cloudinaryImageId}
+        cuisines={RESTAURANT_DATA[0].info.cuisines}
+        locality={RESTAURANT_DATA[0].info.locality}
+        avgRating={RESTAURANT_DATA[0].info.avgRating}
+        sla={RESTAURANT_DATA[0].info.sla}
+      />
+      ;
     </>
   );
 };
