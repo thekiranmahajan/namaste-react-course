@@ -40,7 +40,7 @@ const RestaurantCard = ({
   avgRating,
   sla,
 }) => {
-  console.log(cloudinaryImageId);
+  // console.log(cloudinaryImageId);
   return (
     <div className="card">
       <div className="restaurantImg">
@@ -57,6 +57,7 @@ const RestaurantCard = ({
   );
 };
 const RestaurantList = () => {
+  // console.log({ ...RESTAURANT_DATA[0].info });
   return (
     <>
       <RestaurantCard {...RESTAURANT_DATA[0].info} />;
