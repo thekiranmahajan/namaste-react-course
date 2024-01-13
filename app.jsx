@@ -51,7 +51,7 @@ const RestaurantCard = ({
       <h4 className="rating-time">
         ⭐{avgRating} & {sla.deliveryTime} mins
       </h4>
-      <p className="category">{cuisines}</p>
+      <p className="category">{cuisines.join(", ")}</p>
       <p className="location">{locality}</p>
     </div>
   );
@@ -60,7 +60,9 @@ const RestaurantList = () => {
   // console.log({ ...RESTAURANT_DATA[0].info });
   return (
     <>
-      <RestaurantCard {...RESTAURANT_DATA[0].info} />;
+      {RESTAURANT_DATA.map((restaurant) => (
+        <RestaurantCard {...restaurant.info} key={restaurant.info.id} />
+      ))}
     </>
   );
 };
