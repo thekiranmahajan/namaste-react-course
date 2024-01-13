@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/images/logo.png";
 
 const Header = () => {
-  const searchText = "hello";
+  const [searchText, setSearchText] = useState("");
 
   return (
     <div className="navbar">
@@ -15,7 +15,7 @@ const Header = () => {
         placeholder="Search restaurants here.."
         value={searchText}
         onInput={(e) => {
-          console.log(e.target.value);
+          setSearchText(e.target.value);
         }}
       />
       <div className="left">
