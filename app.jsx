@@ -59,15 +59,7 @@ const RestaurantCard = ({
 const RestaurantList = () => {
   return (
     <>
-      <RestaurantCard
-        name={RESTAURANT_DATA[0].info.name}
-        cloudinaryImageId={RESTAURANT_DATA[0].info.cloudinaryImageId}
-        cuisines={RESTAURANT_DATA[0].info.cuisines}
-        locality={RESTAURANT_DATA[0].info.locality}
-        avgRating={RESTAURANT_DATA[0].info.avgRating}
-        sla={RESTAURANT_DATA[0].info.sla}
-      />
-      ;
+      <RestaurantCard {...RESTAURANT_DATA[0].info} />;
     </>
   );
 };
