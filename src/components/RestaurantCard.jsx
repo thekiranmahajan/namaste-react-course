@@ -1,5 +1,5 @@
 import React from "react";
-
+import { IMG_URL } from "../../constants";
 const RestaurantCard = ({
   name,
   cloudinaryImageId,

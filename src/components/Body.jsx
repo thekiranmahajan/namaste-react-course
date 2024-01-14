@@ -1,9 +1,9 @@
 import React from "react";
 import RestaurantList from "./RestaurantList";
-const Body = () => {
+const Body = ({ restaurants }) => {
   return (
     <div className="main-container">
-      <RestaurantList />
+      <RestaurantList restaurants={restaurants} />
     </div>
   );
 };

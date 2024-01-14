@@ -1,25 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/images/logo.png";
-import { RESTAURANT_DATA } from "../../constants";
-import RestaurantList from "./RestaurantList";
 
-const Header = () => {
-  const [searchText, setSearchText] = useState("");
-  const [restaurants, setRestaurants] = useState(RESTAURANT_DATA);
-  /* 
-  Where,
-    searchText is the state variable name
-    and useState("") this empty string is the default initialized value of it.
-    setSearchText() is a Fn which helps to update new value to replace default one
-   */
-
-  const searchRestaurants = (searchText, restaurants) => {
-    const filterData = restaurants.filter((restaurant) =>
-      restaurant.info.name.includes(searchText)
-    );
-    return searchRestaurants(filterData);
-  };
-
+const Header = ({ searchText, setSearchText, onSearch }) => {
   return (
     <div className="navbar">
       <div className="right">
@@ -33,14 +15,11 @@ const Header = () => {
           value={searchText}
           onInput={(e) => {
             setSearchText(e.target.value);
-            /*
-           this Fn gets fired when input is given to input field updating the value of input to as new user typed string. using e.target.value 
-           */
           }}
         />
         <button
           onClick={() => {
-            searchRestaurants(searchText, restaurants);
+            onSearch(searchText);
           }}
           className="search-btn"
         >
