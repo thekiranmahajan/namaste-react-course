@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Header, Body, Footer } from "./src/components";
 import { RESTAURANT_DATA } from "./constants";
@@ -13,6 +13,8 @@ const AppLayout = () => {
     );
     setFilteredRestaurants(filterData);
   };
+
+
   return (
     <>
       <Header
