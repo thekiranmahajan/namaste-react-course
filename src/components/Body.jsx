@@ -1,7 +1,9 @@
 import React from "react";
 import RestaurantList from "./RestaurantList";
 const Body = ({ restaurants }) => {
-  return (
+  return restaurants == "" ? (
+    <div>Placeholer UI or Shimmer UI....</div>
+  ) : (
     <div className="main-container">
       <RestaurantList restaurants={restaurants} />
     </div>
