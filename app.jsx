@@ -13,7 +13,22 @@ const AppLayout = () => {
     );
     setFilteredRestaurants(filterData);
   };
-
+  const getRestaurants = async () => {
+    const response = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.4901977&lng=73.8397009&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+    const data = await response.json();
+    // console.log(
+    //   data.data.cards[2].card.card.gridElements.infoWithStyle.restaurants
+    // );
+    setFilteredRestaurants(
+      data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+  useEffect(() => {
+    getRestaurants();
+  }, []);
+  console.log("render()");
 
   return (
     <>
