@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import RestaurantCard from "./RestaurantCard";
 
 const RestaurantList = ({ restaurants }) => {
+  if (!restaurants) {
+    console.log("no restaurants");
+    return <p>No Restaurants</p>;
+  }
   return (
     <>
       {restaurants.map((restaurant) => (
