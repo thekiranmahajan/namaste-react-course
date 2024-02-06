@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-import { Header, Body, Footer } from "./src/components";
+import { Header, Body, Footer, About } from "./src/components";
 // import { RESTAURANT_DATA } from "./constants";
+
 const AppLayout = () => {
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -42,7 +43,10 @@ const AppLayout = () => {
         searchText={searchText}
         setSearchText={setSearchText}
       />
+
+      <About />
       <Body restaurants={filteredRestaurants} />
+
       <Footer />
     </>
   );
