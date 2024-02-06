@@ -23,6 +23,7 @@ class ProfileClass extends React.Component {
             Add
           </button>
         </div>
+        <h2>{this.props.name}</h2>
       </div>
     );
   }

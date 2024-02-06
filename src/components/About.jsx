@@ -6,7 +6,7 @@ const About = () => {
     <div className="about">
       <h1>About Page</h1>
       <ProfileFunc name={"Ray"} />
-      <ProfileClass />
+      <ProfileClass name={"Kiran Mahajan"} />
     </div>
   );
 };
