@@ -16,7 +16,7 @@ class ProfileClass extends React.Component {
           <button
             onClick={() =>
               this.setState({
-                count: 1,
+                count: this.state.count + 1,
               })
             }
           >
