@@ -19,10 +19,10 @@ const AppLayout = () => {
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.51981990724166&lng=73.86026275822753&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       const data = await response.json();
-      console.log(
-        data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
+      // console.log(
+      //   data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+      //     ?.restaurants
+      // );
       setFilteredRestaurants(
         data?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants
@@ -34,7 +34,7 @@ const AppLayout = () => {
   useEffect(() => {
     getRestaurants();
   }, []);
-  console.log("render()");
+  // console.log("render()");
 
   return (
     <>
