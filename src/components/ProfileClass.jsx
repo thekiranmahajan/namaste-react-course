@@ -7,8 +7,13 @@ class ProfileClass extends React.Component {
     this.state = {
       count: 0,
     };
+    console.log("PrfileClass: constructor");
+  }
+  componentDidMount() {
+    console.log("PrfileClass: componentDidMount");
   }
   render() {
+    console.log("PrfileClass: render()");
     return (
       <div>
         <div>

@@ -5,8 +5,8 @@ const ProfileFunc = (props) => {
   return (
     <div>
       <div>
-        Profile Functional Component-- Count: {count}{" "}
-        <button onClick={() => setCount(count + 1)}>Add</button>{" "}
+        Profile Functional Component-- Count: {count}
+        <button onClick={() => setCount(count + 1)}>Add</button>
       </div>
       <h2>{props.name}</h2>
     </div>
