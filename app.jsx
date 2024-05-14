@@ -31,9 +31,9 @@ const AppLayout = () => {
       console.log("Something went wrong while fetching API...😵");
     }
   };
-  useEffect(() => {
-    getRestaurants();
-  }, []);
+  // useEffect(() => {
+  //   getRestaurants();
+  // }, []);
   // console.log("render()");
 
   return (

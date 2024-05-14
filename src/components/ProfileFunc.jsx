@@ -7,8 +7,9 @@ const ProfileFunc = (props) => {
     const data = await fetch(API_URL).then((res) => res.json());
     console.log(data);
   };
-
-  useEffect(() => getProfileInfo(), []);
+  // useEffect(() => {
+  //   getProfileInfo();
+  // }, []);
 
   return (
     <div>

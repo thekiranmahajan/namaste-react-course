@@ -5,30 +5,33 @@ class ProfileClass extends React.Component {
     super(props);
 
     this.state = {
-      count: 0,
+      userData: {
+        name: "john doe",
+        location: "unknown",
+      },
     };
-    console.log("PrfileClass: constructor");
+    console.log("ProfileClass: child-constructor");
   }
-  componentDidMount() {
-    console.log("PrfileClass: componentDidMount");
+
+  async componentDidMount() {
+    const API_URL = "https://api.github.com/users/thekiranmahajan";
+    const data = await fetch(API_URL).then((res) => res.json());
+    console.log(data);
+
+    this.setState({
+      userData: data,
+    });
+
+    console.log("ProfileClass: componentDidMount");
   }
+
   render() {
-    console.log("PrfileClass: render()");
+    console.log("ProfileClass: render()");
     return (
       <div>
-        <div>
-          Profile Class Component-- Count: {this.state.count}
-          <button
-            onClick={() =>
-              this.setState({
-                count: this.state.count + 1,
-              })
-            }
-          >
-            Add
-          </button>
-        </div>
-        <h2>{this.props.name}</h2>
+        <img src={this.state.userData.avatar_url} alt="avatar" />
+        <h2>{this.state.userData.name}</h2>
+        <h4>{this.state.userData.location}</h4>
       </div>
     );
   }
