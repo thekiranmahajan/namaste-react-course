@@ -13,17 +13,20 @@ class ProfileClass extends React.Component {
     console.log("child-constructor");
   }
 
-  async componentDidMount() {
-    //after first render
-    const API_URL = "https://api.github.com/users/thekiranmahajan";
-    const data = await fetch(API_URL).then((res) => res.json());
-    console.log(data);
+  componentDidMount() {
+    // //after first render
+    // const API_URL = "https://api.github.com/users/thekiranmahajan";
+    // const data = await fetch(API_URL).then((res) => res.json());
+    // console.log(data);
 
-    this.setState({
-      userData: data,
-    });
+    // this.setState({
+    //   userData: data,
+    // });
 
-    console.log("child-componentDidMount");
+    // console.log("child-componentDidMount");
+    this.interval = setInterval(() => {
+      console.log("child-componentDidMount");
+    }, 3000);
   }
 
   componentDidUpdate() {
@@ -34,6 +37,7 @@ class ProfileClass extends React.Component {
   componentWillUnmount() {
     //just before destroying the component lifecycle
     console.log("child-componentWillUnmount");
+    clearInterval(this.interval);
   }
 
   render() {
