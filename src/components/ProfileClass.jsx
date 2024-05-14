@@ -30,7 +30,12 @@ class ProfileClass extends React.Component {
     //every render or ui update
     console.log("child-componentDidUpdate");
   }
-  
+
+  componentWillUnmount() {
+    //just before destroying the component lifecycle
+    console.log("child-componentWillUnmount");
+  }
+
   render() {
     console.log("child-render()");
     return (
