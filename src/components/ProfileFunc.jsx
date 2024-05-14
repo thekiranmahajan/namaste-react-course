@@ -7,9 +7,20 @@ const ProfileFunc = (props) => {
     const data = await fetch(API_URL).then((res) => res.json());
     console.log(data);
   };
-  // useEffect(() => {
-  //   getProfileInfo();
-  // }, []);
+  useEffect(() => {
+    getProfileInfo();
+    const interval = setInterval(() => {
+      console.log("child-componentDidMount");
+    }, 3000);
+
+    console.log("useEffect called!");
+    return () => {
+      console.log("useEffect return!");
+
+      clearInterval(interval);
+    };
+  }, []);
+  console.log("render!");
 
   return (
     <div>
