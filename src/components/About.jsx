@@ -15,15 +15,15 @@ import ProfileClass from "./ProfileClass";
 class About extends React.Component {
   constructor(props) {
     super(props);
-    console.log("About: Parent-Constructor");
+    console.log("Parent-Constructor");
   }
   componentDidMount() {
-    console.log("About: Parent-componentDidMount");
+    console.log("Parent-componentDidMount");
   }
   render() {
-    console.log("About: Parent-render");
+    console.log("Parent-render");
 
-    return <ProfileClass name={"Kiran Mahajan"} />;
+    return <ProfileClass name={"chomu"} />;
   }
 }
 

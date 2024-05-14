@@ -10,10 +10,11 @@ class ProfileClass extends React.Component {
         location: "unknown",
       },
     };
-    console.log("ProfileClass: child-constructor");
+    console.log("child-constructor");
   }
 
   async componentDidMount() {
+    //after first render
     const API_URL = "https://api.github.com/users/thekiranmahajan";
     const data = await fetch(API_URL).then((res) => res.json());
     console.log(data);
@@ -22,11 +23,16 @@ class ProfileClass extends React.Component {
       userData: data,
     });
 
-    console.log("ProfileClass: componentDidMount");
+    console.log("child-componentDidMount");
   }
 
+  componentDidUpdate() {
+    //every render or ui update
+    console.log("child-componentDidUpdate");
+  }
+  
   render() {
-    console.log("ProfileClass: render()");
+    console.log("child-render()");
     return (
       <div>
         <img src={this.state.userData.avatar_url} alt="avatar" />
